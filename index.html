@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WanderIndia | Discover India Your Way</title>
+
+    <!-- Favicon -->
+    <link
+        rel="icon" type="image/png" type="image/png"
+         href="Assets/wanderindia-favicon.ico"
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div id="navbar"></div>
+
+<main>
+<div id="hero"></div>
+<div id="stats"></div>
+<div id="regions"></div>
+<div id="destinations"></div>
+<div id="plan-your-trip"></div>
+<div id="packages"></div>
+<div id="hidden-gems"></div>
+<div id="explore"></div>
+<div id="reviews"></div>
+<div id="about"></div>
+<div id="contact"></div>
+</main>
+
+<div id="footer"></div>
+
+<script src="js/script.js" defer></script>
+
+<!-- Theme Toggle -->
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    🌙
+</button>
+
+<script>
+
+const packageData = {
+    rajasthan: {
+        tag: "BESTSELLER",
+        title: "Royal Rajasthan Escape",
+        location: "Jaipur · Jodhpur · Udaipur",
+        duration: "6 Days / 5 Nights",
+        rating: "★ 4.9",
+        price: "₹24,999",
+        image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1400&q=85",
+        description: "Step into the royal world of Rajasthan with colourful cities, magnificent forts, beautiful palaces and unforgettable cultural experiences.",
+        itinerary: [
+            "Day 1: Arrive in Jaipur and explore the Pink City",
+            "Day 2: Amber Fort, City Palace and local markets",
+            "Day 3: Travel to Jodhpur and explore Mehrangarh Fort",
+            "Day 4: Discover the blue streets and local culture of Jodhpur",
+            "Day 5: Travel to Udaipur and enjoy the beautiful lakes",
+            "Day 6: Udaipur sightseeing and departure"
+        ],
+        includes: [
+            "Hotel accommodation",
+            "Daily breakfast",
+            "Private sightseeing transfers",
+            "Airport / railway station transfers",
+            "Experienced local assistance"
+        ],
+        excludes: [
+            "Flight or train tickets",
+            "Personal expenses",
+            "Lunch and dinner",
+            "Travel insurance",
+            "Anything not mentioned in inclusions"
+        ]
+    },
+
+    kerala: {
+        tag: "POPULAR",
+        title: "Kerala Slow Escape",
+        location: "Munnar · Alleppey · Kochi",
+        duration: "5 Days / 4 Nights",
+        rating: "★ 4.8",
+        price: "₹19,499",
+        image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1400&q=85",
+        description: "Experience the peaceful side of Kerala with misty mountains, lush tea gardens, beautiful backwaters and relaxing moments surrounded by nature.",
+        itinerary: [
+            "Day 1: Arrive in Kochi and travel to Munnar",
+            "Day 2: Explore Munnar tea gardens and viewpoints",
+            "Day 3: Travel from Munnar to Alleppey",
+            "Day 4: Enjoy a peaceful backwater experience",
+            "Day 5: Kochi sightseeing and departure"
+        ],
+        includes: [
+            "Hotel accommodation",
+            "Daily breakfast",
+            "Private transportation",
+            "Sightseeing tours",
+            "Backwater experience"
+        ],
+        excludes: [
+            "Flights or train tickets",
+            "Personal expenses",
+            "Lunch and dinner",
+            "Travel insurance",
+            "Optional activities"
+        ]
+    },
+
+    kashmir: {
+        tag: "TRENDING",
+        title: "Kashmir in Seven Days",
+        location: "Srinagar · Gulmarg · Pahalgam",
+        duration: "7 Days / 6 Nights",
+        rating: "★ 5.0",
+        price: "₹28,999",
+        image: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1400&q=85",
+        description: "Discover Kashmir's dramatic mountains, peaceful lakes and charming valleys through a carefully planned week-long journey.",
+        itinerary: [
+            "Day 1: Arrive in Srinagar",
+            "Day 2: Srinagar sightseeing and Dal Lake",
+            "Day 3: Day trip to Gulmarg",
+            "Day 4: Travel to Pahalgam",
+            "Day 5: Explore Pahalgam valley",
+            "Day 6: Return to Srinagar and local exploration",
+            "Day 7: Departure"
+        ],
+        includes: [
+            "Hotel accommodation",
+            "Daily breakfast",
+            "Private cab for sightseeing",
+            "Airport transfers",
+            "Local sightseeing"
+        ],
+        excludes: [
+            "Flights",
+            "Personal expenses",
+            "Adventure activities",
+            "Lunch and dinner",
+            "Travel insurance"
+        ]
+    },
+
+    goa: {
+        tag: "BEACH ESCAPE",
+        title: "Goa Beach Escape",
+        location: "North Goa · South Goa · Old Goa",
+        duration: "4 Days / 3 Nights",
+        rating: "★ 4.8",
+        price: "₹16,999",
+        image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1400&q=85",
+        description: "A relaxed Goa getaway filled with golden beaches, coastal views, historic landmarks and plenty of time to slow down.",
+        itinerary: [
+            "Day 1: Arrive in Goa and relax at the beach",
+            "Day 2: North Goa beaches and sightseeing",
+            "Day 3: South Goa and Old Goa exploration",
+            "Day 4: Leisure morning and departure"
+        ],
+        includes: [
+            "Hotel accommodation",
+            "Daily breakfast",
+            "Airport transfers",
+            "Private sightseeing",
+            "Local assistance"
+        ],
+        excludes: [
+            "Flights",
+            "Personal expenses",
+            "Water sports",
+            "Lunch and dinner",
+            "Travel insurance"
+        ]
+    },
+
+    manali: {
+        tag: "ADVENTURE",
+        title: "Manali Mountain Escape",
+        location: "Manali · Solang Valley · Kasol",
+        duration: "6 Days / 5 Nights",
+        rating: "★ 4.9",
+        price: "₹21,999",
+        image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1400&q=85",
+        description: "Escape into the Himalayas with mountain landscapes, peaceful valleys, scenic drives and exciting adventure experiences.",
+        itinerary: [
+            "Day 1: Arrive in Manali",
+            "Day 2: Manali local sightseeing",
+            "Day 3: Solang Valley adventure day",
+            "Day 4: Explore Kasol and nearby valleys",
+            "Day 5: Leisure day in Manali",
+            "Day 6: Departure"
+        ],
+        includes: [
+            "Hotel accommodation",
+            "Daily breakfast",
+            "Private transfers",
+            "Local sightseeing",
+            "Driver assistance"
+        ],
+        excludes: [
+            "Travel tickets",
+            "Adventure activity charges",
+            "Personal expenses",
+            "Lunch and dinner",
+            "Travel insurance"
+        ]
+    },
+
+    darjeeling: {
+        tag: "HIDDEN GEM",
+        title: "Darjeeling Himalayan Escape",
+        location: "Darjeeling · Tiger Hill · Kalimpong",
+        duration: "5 Days / 4 Nights",
+        rating: "★ 4.8",
+        price: "₹18,999",
+        image: "https://images.unsplash.com/photo-1544634076-a90160dd7b4f?auto=format&fit=crop&w=1400&q=85",
+        description: "Wake up to Himalayan views, explore tea gardens and experience the peaceful charm of Darjeeling and its surrounding hills.",
+        itinerary: [
+            "Day 1: Arrive in Darjeeling",
+            "Day 2: Tiger Hill sunrise and local sightseeing",
+            "Day 3: Explore Darjeeling tea gardens",
+            "Day 4: Kalimpong day trip",
+            "Day 5: Leisure morning and departure"
+        ],
+        includes: [
+            "Hotel accommodation",
+            "Daily breakfast",
+            "Private sightseeing",
+            "Local transfers",
+            "Driver assistance"
+        ],
+        excludes: [
+            "Flights or trains",
+            "Personal expenses",
+            "Lunch and dinner",
+            "Entry fees",
+            "Travel insurance"
+        ]
+    }
+};
+
+function showPackage(packageName) {
+
+    window.selectedPackage = packageName;
+    const data = packageData[packageName];
+
+    if (!data) return;
+
+    document.getElementById("detailsTag").textContent = data.tag;
+    document.getElementById("detailsTitle").textContent = data.title;
+
+    document.getElementById("detailsDuration").textContent = "🌙 " + data.duration;
+    document.getElementById("detailsRating").textContent = data.rating;
+    document.getElementById("detailsPrice").textContent = data.price;
+    document.getElementById("detailsImage").src = data.image;
+    document.getElementById("detailsDescription").textContent = data.description;
+
+    const itinerary = document.getElementById("detailsItinerary");
+    itinerary.innerHTML = "";
+
+    data.itinerary.forEach(function(item) {
+        const p = document.createElement("p");
+        p.textContent = item;
+        itinerary.appendChild(p);
+    });
+
+    const includes = document.getElementById("detailsIncludes");
+    includes.innerHTML = "";
+
+    data.includes.forEach(function(item) {
+        const li = document.createElement("li");
+        li.textContent = item;
+        includes.appendChild(li);
+    });
+
+    const excludes = document.getElementById("detailsExcludes");
+    excludes.innerHTML = "";
+
+    data.excludes.forEach(function(item) {
+        const li = document.createElement("li");
+        li.textContent = item;
+        excludes.appendChild(li);
+    });
+
+    const detailsSection = document.getElementById("package-details");
+
+    detailsSection.style.display = "block";
+    detailsSection.classList.add("active");
+
+    setTimeout(function() {
+        detailsSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }, 100);
+}
+
+function closePackageDetails() {
+
+    const detailsSection = document.getElementById("package-details");
+    const packagesSection = document.getElementById("packages");
+
+    detailsSection.style.display = "none";
+    detailsSection.classList.remove("active");
+
+    if (packagesSection) {
+        packagesSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+}
+
+function selectPackageForPlanner() {
+
+    const packageName = window.selectedPackage;
+
+    if (!packageName) return;
+
+    const destinationMap = {
+        rajasthan: "Rajasthan",
+        kerala: "Kerala",
+        kashmir: "Kashmir",
+        goa: "Goa",
+        manali: "Himachal Pradesh",
+        darjeeling: "Darjeeling"
+    };
+
+    const destination = destinationMap[packageName];
+    const data = packageData[packageName];
+
+    if (!destination || !data) return;
+
+    const plannerDestination =
+        document.getElementById("plannerDestination");
+
+    const plannerTripLength =
+        document.getElementById("triplength");
+
+    if (plannerDestination) {
+        plannerDestination.value = destination;
+    }
+
+    if (plannerTripLength) {
+        plannerTripLength.value = data.duration;
+    }
+}
+</script>
+
+</body>
+</html>

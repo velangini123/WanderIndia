@@ -1,0 +1,277 @@
+
+<html>
+    <head>
+        </head>
+        <body>
+            <!-- =====================================================
+     TRIP PLANNER
+===================================================== -->
+
+<section class="section planner-section" id="planner">
+
+    <div class="container">
+
+        <div class="planner-box">
+
+            <!-- LEFT SIDE -->
+            <div class="planner-intro">
+
+                <span class="eyebrow">YOUR JOURNEY STARTS HERE</span>
+
+                <h2>
+                    Let's plan something
+                    <span>unforgettable.</span>
+                </h2>
+
+                <p>
+                    Tell us what kind of India you want to experience.
+                    We've made planning beautifully simple.
+                </p>
+
+                <div class="planner-points">
+                    <span>✓ Flexible itineraries</span>
+                    <span>✓ Handpicked stays</span>
+                    <span>✓ Local experiences</span>
+                    <span>✓ Expert support</span>
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+            <form class="planner-form" id="plannerForm">
+
+                <!-- NAME + EMAIL -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>YOUR NAME</label>
+
+                        <input
+                            type="text"
+                            id="plannerName"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>EMAIL ADDRESS</label>
+
+                        <input
+                            type="email"
+                            id="plannerEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- DESTINATION -->
+                <div class="form-group">
+
+                    <label>WHERE DO YOU WANT TO GO?</label>
+
+                    <select id="plannerDestination" required>
+
+                        <option value="">Select destination</option>
+
+                        <option value="Kashmir">Kashmir</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Ladakh">Ladakh</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="Darjeeling">Darjeeling</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TRIP DETAILS -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>TRIP LENGTH</label>
+
+                        <select id="triplength" required>
+
+                            <option value="">Select trip length</option>
+
+                            <option value="3 Days / 2 Nights">
+                                3 Days / 2 Nights
+                            </option>
+
+                            <option value="4 Days / 3 Nights">
+                                4 Days / 3 Nights
+                            </option>
+
+                            <option value="5 Days / 4 Nights">
+                                5 Days / 4 Nights
+                            </option>
+
+                            <option value="6 Days / 5 Nights">
+                                6 Days / 5 Nights
+                            </option>
+
+                            <option value="7 Days / 6 Nights">
+                                7 Days / 6 Nights
+                            </option>
+
+                            <option value="8 Days / 7 Nights">
+                                8 Days / 7 Nights
+                            </option>
+
+                            <option value="9 Days / 8 Nights">
+                                9 Days / 8 Nights
+                            </option>
+
+                            <option value="10 Days / 9 Nights">
+                                10 Days / 9 Nights
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>TRAVEL DATES</label>
+
+                        <input
+                            type="date"
+                            id="travelDate"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- TRAVELLERS + STYLE -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>TRAVELLERS</label>
+
+                        <select id="travellers">
+
+                            <option value="2 travellers">
+                                2 travellers
+                            </option>
+
+                            <option value="1 traveller">
+                                1 traveller
+                            </option>
+
+                            <option value="3 - 4 travellers">
+                                3 - 4 travellers
+                            </option>
+
+                            <option value="5+ travellers">
+                                5+ travellers
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>WHAT'S YOUR STYLE?</label>
+
+                        <select id="travelStyle" required>
+
+                            <option value="">Select Travel Style</option>
+
+                            <option value="Adventure">Adventure</option>
+                            <option value="Relaxation">Relaxation</option>
+                            <option value="Family">Family</option>
+                            <option value="Romantic">Romantic</option>
+                            <option value="Solo">Solo</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUTTON -->
+                <button
+                    type="button"
+                    class="planner-submit"
+                    id="buildJourneyBtn"
+                >
+                    Build My Journey →
+                </button>
+
+            </form>
+
+
+            <!-- SAVED TRIP -->
+            <div class="saved-trip" id="savedTrip">
+
+                <h3>Your Saved Trip</h3>
+
+                <p>
+                    <strong>Name:</strong>
+                    <span id="savedName"></span>
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    <span id="savedEmail"></span>
+                </p>
+
+                <p>
+                    <strong>Destination:</strong>
+                    <span id="savedDestination"></span>
+                </p>
+
+                <p>
+                    <strong>Trip Length:</strong>
+                    <span id="savedTripLength"></span>
+                </p>
+
+                <p>
+                    <strong>Travel Date:</strong>
+                    <span id="savedTravelDate"></span>
+                </p>
+
+                <p>
+                    <strong>Travellers:</strong>
+                    <span id="savedTravellers"></span>
+                </p>
+
+                <p>
+                    <strong>Travel Style:</strong>
+                    <span id="savedTravelStyle"></span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+ </body>
+    
+</html>
